@@ -1,0 +1,5 @@
+Text=#050315
+Background=#fbfbfe
+Primary=#2f27ce
+Secondary=#dedcff
+Accent=#433bff
