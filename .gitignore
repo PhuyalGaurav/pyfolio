@@ -163,3 +163,4 @@ cython_debug/
 config/*
 !config/img/
 !config/img/**
+!config/.gitkeep
