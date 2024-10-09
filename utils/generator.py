@@ -80,9 +80,9 @@ def generator():
     os.makedirs(os.path.dirname("config/home.txt"), exist_ok=True)
     with open("config/home.txt", 'w') as file:
         file.write(
-            "main_text=\n"
-            "sub_text=\n"
-            "profile_picture=\n"
+            "main_text='Add Main webpage text'\n"
+            "sub_text='add subtext here'\n"
+            "profile_picture='add your photo url keep it in img/'\n"
         )
 
     os.makedirs(os.path.dirname("config/theme.txt"), exist_ok=True)
