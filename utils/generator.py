@@ -5,6 +5,14 @@ def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
+def get_number_input(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+
 def ask_question(question, valid_answers):
     while True:
         clear_screen()
@@ -54,14 +62,14 @@ def main():
         "Use Random theme? (y/n)", 'yn'
     )
     use_about, use_skills, use_education, use_experience, use_projects, use_contact, use_socials = navbar_questions()
-    no_of_skills = int(
-        input("Enter the number of skills you want to include: "))
-    no_of_education = int(
-        input("Enter the number of education you want to include: "))
-    no_of_experience = int(
-        input("Enter the number of experience you want to include: "))
-    no_of_projects = int(
-        input("Enter the number of projects you want to include: "))
+    no_of_skills = get_number_input(
+        "Enter the number of skills you want to include: ")
+    no_of_education = get_number_input(
+        "Enter the number of education you want to include: ")
+    no_of_experience = get_number_input(
+        "Enter the number of experience you want to include: ")
+    no_of_projects = get_number_input(
+        "Enter the number of projects you want to include: ")
     print("Generating template...")
     return theme, use_about, use_skills, use_education, use_experience, use_projects, use_contact, use_socials, no_of_skills, no_of_education, no_of_experience, no_of_projects
 
