@@ -1,11 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> {Name} </title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="font-sans bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-gray-900 text-white py-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">My Portfolio</h1>
+        <ul class="flex space-x-6">
+          <li><a href="#about" class="hover:underline">About</a></li>
+          <li><a href="#projects" class="hover:underline">Projects</a></li>
+          <li><a href="#education" class="hover:underline">Education</a></li>
+          <li><a href="#contact" class="hover:underline">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="py-16 bg-white">
+      <div class="container mx-auto flex flex-col md:flex-row items-center">
+        <div class="w-full md:w-1/2">
+          <h2 class="text-4xl font-bold mb-4">Hello, I'm [Your Name]</h2>
+          <p class="text-lg text-gray-700">
+            I am a passionate web developer with a knack for building beautiful,
+            user-friendly websites and web applications.
+          </p>
+        </div>
+        <div class="w-full md:w-1/2 mt-6 md:mt-0">
+          <img
+            src="your-photo.jpg"
+            alt="Your Photo"
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-100">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-10">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold mb-3">Project 1</h3>
+            <p class="text-gray-700">Brief description of project 1.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold mb-3">Project 2</h3>
+            <p class="text-gray-700">Brief description of project 2.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold mb-3">Project 3</h3>
+            <p class="text-gray-700">Brief description of project 3.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 bg-white">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">Education</h2>
+        <ul class="list-none space-y-4 text-gray-700">
+          <li>
+            <strong>Bachelor's Degree in Computer Engineering</strong>
+            - [Your University]
+          </li>
+          <li><strong>High School (+2)</strong> - [Your School]</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-8">
+      <div class="container mx-auto text-center">
+        <h2 class="text-2xl font-bold mb-4">Contact & Socials</h2>
+        <p class="mb-4">Email: your.email@example.com</p>
+        <ul class="flex justify-center space-x-6">
+          <li>
+            <a
+              href="https://github.com/yourgithub"
+              target="_blank"
+              class="hover:underline"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com/in/yourlinkedin"
+              target="_blank"
+              class="hover:underline"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/yourtwitter"
+              target="_blank"
+              class="hover:underline"
+              >Twitter</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
 </html>
