@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
     <title>Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
@@ -39,10 +47,10 @@
       </div>
     </section>
     <!-- about me -->
-    <section id="about-me" class="py-16 bg-white">
-      <div class="container mx-auto flex flex-col md:flex-row">
-        <div class="md:w-1/2 md:pr-8">
-          <h2 class="text-3xl font-bold mb-4">Your Name</h2>
+    <section id="about-me" class="py-8 bg-white" data-aos="fade-up">
+      <div class="container mx-auto">
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+          <h2 class="text-3xl font-bold mb-4">About Me</h2>
           <p class="text-xl mb-4">Main text about yourself.</p>
           <p class="text-gray-700">
             Subtext with additional details about yourself.
@@ -50,103 +58,143 @@
         </div>
       </div>
     </section>
-    <!-- projects -->
-    <section id="projects" class="py-16 bg-gray-100">
+
+    <!-- skills -->
+    <section id="skills" class="py-8 bg-white" data-aos="fade-up">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-10">Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-2xl font-semibold mb-3">Project 1</h3>
-            <p class="text-gray-700">Brief description of project 1.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-2xl font-semibold mb-3">Project 2</h3>
-            <p class="text-gray-700">Brief description of project 2.</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-2xl font-semibold mb-3">Project 3</h3>
-            <p class="text-gray-700">Brief description of project 3.</p>
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+          <h2 class="text-3xl font-bold text-center mb-6">Skills</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div
+              class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
+            >
+              <img
+                src="path/to/skill1.png"
+                alt="Skill 1"
+                class="w-16 h-16 rounded-full mb-4"
+              />
+              <p class="text-xl font-semibold">Skill 1</p>
+            </div>
+            <div
+              class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
+            >
+              <img
+                src="path/to/skill2.png"
+                alt="Skill 2"
+                class="w-16 h-16 rounded-full mb-4"
+              />
+              <p class="text-xl font-semibold">Skill 2</p>
+            </div>
+            <div
+              class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
+            >
+              <img
+                src="path/to/skill3.png"
+                alt="Skill 3"
+                class="w-16 h-16 rounded-full mb-4"
+              />
+              <p class="text-xl font-semibold">Skill 3</p>
+            </div>
+            <div
+              class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
+            >
+              <img
+                src="path/to/skill4.png"
+                alt="Skill 4"
+                class="w-16 h-16 rounded-full mb-4"
+              />
+              <p class="text-xl font-semibold">Skill 4</p>
+            </div>
+            <div
+              class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
+            >
+              <img
+                src="path/to/skill5.png"
+                alt="Skill 5"
+                class="w-16 h-16 rounded-full mb-4"
+              />
+              <p class="text-xl font-semibold">Skill 5</p>
+            </div>
+            <div
+              class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
+            >
+              <img
+                src="path/to/skill6.png"
+                alt="Skill 6"
+                class="w-16 h-16 rounded-full mb-4"
+              />
+              <p class="text-xl font-semibold">Skill 6</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- skills -->
-    <section id="skills" class="py-16 bg-white">
+
+    <!-- projects -->
+    <section id="projects" class="py-8 bg-white" data-aos="fade-up">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-10">Skills</h2>
-        <div class="space-y-6">
-          <div class="flex items-center">
-            <img
-              src="path/to/skill1.png"
-              alt="Skill 1"
-              class="w-16 h-16 rounded-full mr-4"
-            />
-            <p class="text-xl">Skill 1</p>
-          </div>
-          <div class="flex items-center">
-            <img
-              src="path/to/skill2.png"
-              alt="Skill 2"
-              class="w-16 h-16 rounded-full mr-4"
-            />
-            <p class="text-xl">Skill 2</p>
-          </div>
-          <div class="flex items-center">
-            <img
-              src="path/to/skill3.png"
-              alt="Skill 3"
-              class="w-16 h-16 rounded-full mr-4"
-            />
-            <p class="text-xl">Skill 3</p>
-          </div>
-          <div class="flex items-center">
-            <img
-              src="path/to/skill4.png"
-              alt="Skill 4"
-              class="w-16 h-16 rounded-full mr-4"
-            />
-            <p class="text-xl">Skill 4</p>
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+          <h2 class="text-3xl font-bold text-center mb-6">Projects</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white p-4 rounded-lg shadow-md">
+              <h3 class="text-2xl font-semibold mb-3">Project 1</h3>
+              <p class="text-gray-700">Brief description of project 1.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+              <h3 class="text-2xl font-semibold mb-3">Project 2</h3>
+              <p class="text-gray-700">Brief description of project 2.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+              <h3 class="text-2xl font-semibold mb-3">Project 3</h3>
+              <p class="text-gray-700">Brief description of project 3.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- education -->
-    <section id="education" class="py-16 bg-white">
+    <section id="education" class="py-8 bg-white" data-aos="fade-up">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-8">Education</h2>
-        <ul class="list-none space-y-4 text-gray-700">
-          <li>
-            <strong>Bachelor's Degree in Computer Engineering</strong>
-            - [Your University]
-          </li>
-          <li><strong>High School (+2)</strong> - [Your School]</li>
-        </ul>
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+          <h2 class="text-3xl font-bold text-center mb-6">Education</h2>
+          <ul class="list-none space-y-4 text-gray-700">
+            <li>
+              <strong>Bachelor's Degree in Computer Engineering</strong> - [Your
+              University]
+            </li>
+            <li><strong>High School (+2)</strong> - [Your School]</li>
+          </ul>
+        </div>
       </div>
     </section>
-    <!--experience -->
-    <section id="experience" class="py-16 bg-gray-100">
+
+    <!-- experience -->
+    <section id="experience" class="py-8 bg-white" data-aos="fade-up">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-8">Experience</h2>
-        <ul class="list-none space-y-4 text-gray-700">
-          <li>
-            <strong>Software Engineer</strong> - [Company Name]
-            <p class="text-sm">Jan 2020 - Present</p>
-            <p class="text-sm">
-              Description of your role and responsibilities.
-            </p>
-          </li>
-          <li>
-            <strong>Junior Developer</strong> - [Company Name]
-            <p class="text-sm">Jan 2018 - Dec 2019</p>
-            <p class="text-sm">
-              Description of your role and responsibilities.
-            </p>
-          </li>
-        </ul>
+        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+          <h2 class="text-3xl font-bold text-center mb-6">Experience</h2>
+          <ul class="list-none space-y-4 text-gray-700">
+            <li>
+              <strong>Software Engineer</strong> - [Company Name]
+              <p class="text-sm">Jan 2020 - Present</p>
+              <p class="text-sm">
+                Description of your role and responsibilities.
+              </p>
+            </li>
+            <li>
+              <strong>Junior Developer</strong> - [Company Name]
+              <p class="text-sm">Jan 2018 - Dec 2019</p>
+              <p class="text-sm">
+                Description of your role and responsibilities.
+              </p>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
-    <!-- footer-->
+
+    <!-- footer -->
     <footer id="contact" class="bg-gray-900 text-white py-8">
       <div class="container mx-auto flex flex-col md:flex-row justify-between">
         <!-- contact -->
@@ -187,5 +235,10 @@
         </div>
       </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
