@@ -1,5 +1,6 @@
 import os
 import json
+import shutil
 from jinja2 import Environment, FileSystemLoader
 
 
@@ -15,14 +16,15 @@ def parse_config_content(content):
                 prefix, suffix = key.split("_", 1)
                 if prefix not in config_dict:
                     config_dict[prefix] = []
-                entry_index = (
-                    int("".join(filter(str.isdigit, suffix))) - 1
-                    if suffix.isdigit()
-                    else 0
-                )
-                while len(config_dict[prefix]) <= entry_index:
-                    config_dict[prefix].append({})
-                config_dict[prefix][entry_index][suffix] = value
+                if suffix.isdigit():
+                    entry_index = int(suffix) - 1
+                    while len(config_dict[prefix]) <= entry_index:
+                        config_dict[prefix].append({})
+                    config_dict[prefix][entry_index][suffix] = value
+                else:
+                    if not config_dict[prefix]:
+                        config_dict[prefix].append({})
+                    config_dict[prefix][0][suffix] = value
             else:
                 config_dict[key] = value
     return config_dict
@@ -31,6 +33,7 @@ def parse_config_content(content):
 def build():
     config_folder = "config"
     template_folder = "src"
+    output_folder = "output"
     template_file = "index.html"
 
     # Load the Jinja2 environment
@@ -55,10 +58,19 @@ def build():
     output_content = template.render(config_data=config_data, json_data=json_data)
     print(json_data)
 
+    # Ensure the output folder exists
+    os.makedirs(output_folder, exist_ok=True)
+
     # Write the rendered content to the output file
-    output_file = os.path.join(template_folder, "index.html")
+    output_file = os.path.join(output_folder, "index.html")
     with open(output_file, "w") as file:
         file.write(output_content)
+
+    # Copy the img folder from config to output
+    img_src = os.path.join(config_folder, "img")
+    img_dst = os.path.join(output_folder, "img")
+    if os.path.exists(img_src):
+        shutil.copytree(img_src, img_dst, dirs_exist_ok=True)
 
 
 if __name__ == "__main__":
