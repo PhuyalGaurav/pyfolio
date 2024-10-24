@@ -32,7 +32,7 @@ def parse_config_content(content):
 
 def build():
     config_folder = "config"
-    template_folder = "src"
+    template_folder = "src/another"
     output_folder = "output"
     template_file = "index.html"
 
@@ -56,21 +56,25 @@ def build():
 
     # Render the template with the config data
     output_content = template.render(config_data=config_data, json_data=json_data)
-    print(json_data)
 
     # Ensure the output folder exists
     os.makedirs(output_folder, exist_ok=True)
+
+    # Copy everything from src to output
+    for item in os.listdir(template_folder):
+        src_path = os.path.join(template_folder, item)
+        dst_path = os.path.join(output_folder, item)
+        if os.path.isdir(src_path):
+            shutil.copytree(src_path, dst_path, dirs_exist_ok=True)
+        else:
+            shutil.copy2(src_path, dst_path)
 
     # Write the rendered content to the output file
     output_file = os.path.join(output_folder, "index.html")
     with open(output_file, "w") as file:
         file.write(output_content)
 
-    # Copy the img folder from config to output
-    img_src = os.path.join(config_folder, "img")
-    img_dst = os.path.join(output_folder, "img")
-    if os.path.exists(img_src):
-        shutil.copytree(img_src, img_dst, dirs_exist_ok=True)
+    print("Build completed.")
 
 
 if __name__ == "__main__":
