@@ -1,3 +1,5 @@
+> main.py & project.py does the same thing. The only difference is that the whole of project.py is in a single file.
+
 # pyfolio
 
 `pyfolio` is a portfolio generator written in Python. pyfolio makes it easy to generate portfolio websites in Seconds 🤯.
