@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Portfolio</title>
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
@@ -12,26 +12,83 @@
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
     />
-    <title>Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=League+Spartan:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .font-spartan {
+        font-family: "League Spartan", sans-serif;
+      }
+    </style>
   </head>
-  <body class="font-sans bg-gray-100">
+  <body class="bg-gray-100">
     <nav class="bg-gray-900 text-white py-4">
       <div class="container mx-auto flex justify-between items-center">
         <h1 class="text-2xl font-bold">My Portfolio</h1>
-        <ul class="flex space-x-6">
+        <ul class="hidden md:flex space-x-6">
           <li><a href="#about" class="hover:underline">About</a></li>
           <li><a href="#projects" class="hover:underline">Projects</a></li>
+          <li><a href="#skills" class="hover:underline">Skills</a></li>
           <li><a href="#education" class="hover:underline">Education</a></li>
+          <li><a href="#experience" class="hover:underline">Experience</a></li>
           <li><a href="#contact" class="hover:underline">Contact</a></li>
         </ul>
+        <div class="md:hidden">
+          <button id="menu-button" class="text-white focus:outline-none">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
       </div>
+      <ul id="mobile-menu" class="md:hidden hidden flex-col space-y-2 mt-4">
+        <li>
+          <a href="#about" class="block text-center py-2 hover:underline"
+            >About</a
+          >
+        </li>
+        <li>
+          <a href="#projects" class="block text-center py-2 hover:underline"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a href="#skills" class="block text-center py-2 hover:underline"
+            >Skills</a
+          >
+        </li>
+        <li>
+          <a href="#education" class="block text-center py-2 hover:underline"
+            >Education</a
+          >
+        </li>
+        <li>
+          <a href="#experience" class="block text-center py-2 hover:underline"
+            >Experience</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="block text-center py-2 hover:underline"
+            >Contact</a
+          >
+        </li>
+      </ul>
     </nav>
+
     <!-- home -->
     <section id="about" class="py-16 bg-white">
       <div class="container mx-auto flex flex-col md:flex-row items-center">
         <div class="w-full md:w-1/2">
-          <h2 class="text-4xl font-bold mb-4">Hello, I'm [Your Name]</h2>
+          <h2 class="text-4xl font-bold mb-4 font-spartan">
+            Hello, I'm [Your Name]
+          </h2>
           <p class="text-lg text-gray-700">
             I am a passionate web developer with a knack for building beautiful,
             user-friendly websites and web applications.
@@ -46,11 +103,14 @@
         </div>
       </div>
     </section>
+
     <!-- about me -->
     <section id="about-me" class="py-8 bg-white" data-aos="fade-up">
       <div class="container mx-auto">
         <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h2 class="text-3xl font-bold mb-4">About Me</h2>
+          <h2 class="text-3xl font-bold mb-4 text-center font-spartan">
+            About Me
+          </h2>
           <p class="text-xl mb-4">Main text about yourself.</p>
           <p class="text-gray-700">
             Subtext with additional details about yourself.
@@ -63,7 +123,9 @@
     <section id="skills" class="py-8 bg-white" data-aos="fade-up">
       <div class="container mx-auto">
         <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h2 class="text-3xl font-bold text-center mb-6">Skills</h2>
+          <h2 class="text-3xl font-bold text-center mb-6 font-spartan">
+            Skills
+          </h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div
               class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
@@ -74,6 +136,14 @@
                 class="w-16 h-16 rounded-full mb-4"
               />
               <p class="text-xl font-semibold">Skill 1</p>
+              <div
+                class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2"
+              >
+                <div
+                  class="bg-blue-600 h-2.5 rounded-full"
+                  style="width: 70%"
+                ></div>
+              </div>
             </div>
             <div
               class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
@@ -84,6 +154,14 @@
                 class="w-16 h-16 rounded-full mb-4"
               />
               <p class="text-xl font-semibold">Skill 2</p>
+              <div
+                class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2"
+              >
+                <div
+                  class="bg-blue-600 h-2.5 rounded-full"
+                  style="width: 80%"
+                ></div>
+              </div>
             </div>
             <div
               class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
@@ -94,6 +172,14 @@
                 class="w-16 h-16 rounded-full mb-4"
               />
               <p class="text-xl font-semibold">Skill 3</p>
+              <div
+                class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2"
+              >
+                <div
+                  class="bg-blue-600 h-2.5 rounded-full"
+                  style="width: 60%"
+                ></div>
+              </div>
             </div>
             <div
               class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
@@ -104,6 +190,14 @@
                 class="w-16 h-16 rounded-full mb-4"
               />
               <p class="text-xl font-semibold">Skill 4</p>
+              <div
+                class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2"
+              >
+                <div
+                  class="bg-blue-600 h-2.5 rounded-full"
+                  style="width: 50%"
+                ></div>
+              </div>
             </div>
             <div
               class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
@@ -114,6 +208,14 @@
                 class="w-16 h-16 rounded-full mb-4"
               />
               <p class="text-xl font-semibold">Skill 5</p>
+              <div
+                class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2"
+              >
+                <div
+                  class="bg-blue-600 h-2.5 rounded-full"
+                  style="width: 90%"
+                ></div>
+              </div>
             </div>
             <div
               class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
@@ -124,6 +226,14 @@
                 class="w-16 h-16 rounded-full mb-4"
               />
               <p class="text-xl font-semibold">Skill 6</p>
+              <div
+                class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2"
+              >
+                <div
+                  class="bg-blue-600 h-2.5 rounded-full"
+                  style="width: 40%"
+                ></div>
+              </div>
             </div>
           </div>
         </div>
@@ -133,8 +243,10 @@
     <!-- projects -->
     <section id="projects" class="py-8 bg-white" data-aos="fade-up">
       <div class="container mx-auto">
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h2 class="text-3xl font-bold text-center mb-6">Projects</h2>
+        <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+          <h2 class="text-3xl font-bold text-center mb-4 font-spartan">
+            Projects
+          </h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="bg-white p-4 rounded-lg shadow-md">
               <h3 class="text-2xl font-semibold mb-3">Project 1</h3>
@@ -156,8 +268,10 @@
     <!-- education -->
     <section id="education" class="py-8 bg-white" data-aos="fade-up">
       <div class="container mx-auto">
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h2 class="text-3xl font-bold text-center mb-6">Education</h2>
+        <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+          <h2 class="text-3xl font-bold text-center mb-4 font-spartan">
+            Education
+          </h2>
           <ul class="list-none space-y-4 text-gray-700">
             <li>
               <strong>Bachelor's Degree in Computer Engineering</strong> - [Your
@@ -172,8 +286,10 @@
     <!-- experience -->
     <section id="experience" class="py-8 bg-white" data-aos="fade-up">
       <div class="container mx-auto">
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h2 class="text-3xl font-bold text-center mb-6">Experience</h2>
+        <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+          <h2 class="text-3xl font-bold text-center mb-4 font-spartan">
+            Experience
+          </h2>
           <ul class="list-none space-y-4 text-gray-700">
             <li>
               <strong>Software Engineer</strong> - [Company Name]
@@ -199,37 +315,40 @@
       <div class="container mx-auto flex flex-col md:flex-row justify-between">
         <!-- contact -->
         <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-          <h2 class="text-2xl font-bold mb-4">Contact</h2>
+          <h2 class="text-2xl font-bold mb-4 font-spartan">Contact</h2>
           <p class="mb-2">Email: your.email@example.com</p>
           <p class="mb-4">Phone: (123) 456-7890</p>
         </div>
         <!-- socials -->
         <div class="md:w-1/2 text-center md:text-right">
-          <h2 class="text-2xl font-bold mb-4">Socials</h2>
+          <h2 class="text-2xl font-bold mb-4 font-spartan">Socials</h2>
           <ul class="flex justify-center md:justify-end space-x-6">
             <li>
               <a
                 href="https://github.com/yourgithub"
                 target="_blank"
                 class="hover:underline"
-                >GitHub</a
               >
+                <i class="fab fa-github"></i> GitHub
+              </a>
             </li>
             <li>
               <a
                 href="https://linkedin.com/in/yourlinkedin"
                 target="_blank"
                 class="hover:underline"
-                >LinkedIn</a
               >
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
             </li>
             <li>
               <a
                 href="https://twitter.com/yourtwitter"
                 target="_blank"
                 class="hover:underline"
-                >Twitter</a
               >
+                <i class="fab fa-twitter"></i> Twitter
+              </a>
             </li>
           </ul>
         </div>
@@ -239,6 +358,14 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();
+
+      // Mobile menu toggle
+      const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
     </script>
   </body>
 </html>
