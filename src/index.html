@@ -28,6 +28,11 @@
       .font-spartan {
         font-family: "League Spartan", sans-serif;
       }
+      .custom-border {
+        border: 3px solid black; /* Smaller solid black border */
+        border-radius: 50%; /* Makes the image round */
+        padding: 5px; /* Space between the image and the border */
+      }
     </style>
   </head>
   <body class="bg-gray-100">
@@ -94,11 +99,11 @@
             user-friendly websites and web applications.
           </p>
         </div>
-        <div class="w-full md:w-1/2 mt-6 md:mt-0">
+        <div class="w-full md:w-1/2 mt-6 md:mt-0 flex justify-center">
           <img
-            src="https://via.placeholder.com/500"
+            src="https://picsum.photos/200/300"
             alt="Your Photo"
-            class="w-full h-auto rounded-lg shadow-lg"
+            class="w-72 h-72 rounded-full shadow-lg custom-border"
           />
         </div>
       </div>
