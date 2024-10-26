@@ -2,7 +2,9 @@
 
 # pyfolio
 
-`pyfolio` is a portfolio generator written in Python. pyfolio makes it easy to generate portfolio websites in Seconds 🤯.
+`pyfolio` is a portfolio generator written in Python. pyfolio makes it easy to generate portfolio websites in Seconds 🤯. 
+
+## [DEMO VIDEO](https://youtu.be/Z43yPZwkWDo) (For CS50p)
 
 ## Features
 
