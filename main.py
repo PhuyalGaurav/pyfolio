@@ -15,11 +15,14 @@ def regenerate_theme():
 
 def main():
     parser = argparse.ArgumentParser(description="Portfolio Builder")
-    parser.add_argument("--build", action="store_true", help="Build the portfolio")
     parser.add_argument(
-        "--template", action="store_true", help="Generate a new template"
+        "-b", "--build", action="store_true", help="Build the portfolio"
     )
     parser.add_argument(
+        "-t", "--template", action="store_true", help="Generate a new template"
+    )
+    parser.add_argument(
+        "-r",
         "--regenerate-theme",
         action="store_true",
         help="Regenerate the theme and build the portfolio",
