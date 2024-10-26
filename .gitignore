@@ -163,7 +163,7 @@ cython_debug/
 # Config folder
 config/*
 !config/img/
-!config/img/**
+config/img/**
 !config/.gitkeep
 
 # Output folder

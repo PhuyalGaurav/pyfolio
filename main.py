@@ -1,18 +1,28 @@
 import argparse
 import os
-from utils.generator import generator
 from utils.builder import build
+from utils.generator import generator
+from utils.colors import generate_random_theme
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Pyfolio: Your portfolio generator")
+
+def regenerate_theme():
+    os.makedirs(os.path.dirname("config/theme.txt"), exist_ok=True)
+    with open("config/theme.txt", "w") as file:
+        random_theme = generate_random_theme()
+        for key, value in random_theme.items():
+            file.write(f"{key}={value}\n")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Portfolio Builder")
+    parser.add_argument("--build", action="store_true", help="Build the portfolio")
     parser.add_argument(
-        "--build", "-b", action="store_true", help="Build the portfolio"
+        "--template", action="store_true", help="Generate a new template"
     )
     parser.add_argument(
-        "--template",
-        "-t",
+        "--regenerate-theme",
         action="store_true",
-        help="Generate a new template for your information",
+        help="Regenerate the theme and build the portfolio",
     )
     args = parser.parse_args()
 
@@ -29,5 +39,12 @@ if __name__ == "__main__":
                 print("Exiting...")
         else:
             generator()
+    elif args.regenerate_theme:
+        regenerate_theme()
+        build()
     else:
         print("Please provide an argument. Use --help for more information")
+
+
+if __name__ == "__main__":
+    main()

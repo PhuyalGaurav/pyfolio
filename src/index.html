@@ -24,84 +24,121 @@
     <style>
       body {
         font-family: "Inter", sans-serif;
+        color: {{ config_data.theme.Text }};
+        background-color: {{ config_data.theme.Background }};
       }
       .font-spartan {
         font-family: "League Spartan", sans-serif;
       }
       .custom-border {
-        border: 3px solid black; /* Smaller solid black border */
-        border-radius: 50%; /* Makes the image round */
-        padding: 5px; /* Space between the image and the border */
+        border: 3px solid {{ config_data.theme.Primary }};
+        border-radius: 50%;
+        padding: 5px;
+      }
+      .primary-bg {
+        background-color: {{ config_data.theme.Primary }};
+      }
+      .secondary-bg {
+        background-color: {{ config_data.theme.Secondary }};
+      }
+      .accent-bg {
+        background-color: {{ config_data.theme.Accent }};
+      }
+      .primary-text {
+        color: {{ config_data.theme.Primary }};
+      }
+      .secondary-text {
+        color: {{ config_data.theme.Secondary }};
+      }
+      .accent-text {
+        color: {{ config_data.theme.Accent }};
+      }
+
+      @keyframes slideDown {
+        from {
+          max-height: 0;
+          opacity: 0;
+        }
+        to {
+          max-height: 500px;
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          max-height: 500px;
+          opacity: 1;
+        }
+        to {
+          max-height: 0;
+          opacity: 0;
+        }
+      }
+
+      .slide-down {
+        animation: slideDown 0.3s ease-out forwards;
+      }
+
+      .slide-up {
+        animation: slideUp 0.3s ease-out forwards;
       }
     </style>
   </head>
-  <body class="bg-gray-100">
-    <nav class="bg-gray-900 text-white py-4">
+  <body>
+    <nav class="primary-bg text-{{ config_data.theme.Text }} py-4">
       <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-bold">My Portfolio</h1>
-        <ul class="hidden md:flex space-x-6">
-          <li><a href="#about" class="hover:underline">About</a></li>
-          <li><a href="#projects" class="hover:underline">Projects</a></li>
-          <li><a href="#skills" class="hover:underline">Skills</a></li>
-          <li><a href="#education" class="hover:underline">Education</a></li>
-          <li><a href="#experience" class="hover:underline">Experience</a></li>
-          <li><a href="#contact" class="hover:underline">Contact</a></li>
+        <h1 class="text-2xl font-bold px-4">My Portfolio</h1>
+        <ul class="hidden md:flex space-x-6 px-3">
+          <li><a href="#about" class="hover:underline text-{{ config_data.theme.Text }}">About</a></li>
+          <li><a href="#projects" class="hover:underline text-{{ config_data.theme.Text }}">Projects</a></li>
+          <li><a href="#skills" class="hover:underline text-{{ config_data.theme.Text }}">Skills</a></li>
+          <li><a href="#education" class="hover:underline text-{{ config_data.theme.Text }}">Education</a></li>
+          <li><a href="#experience" class="hover:underline text-{{ config_data.theme.Text }}">Experience</a></li>
+          <li><a href="#contact" class="hover:underline text-{{ config_data.theme.Text }}">Contact</a></li>
         </ul>
         <div class="md:hidden">
-          <button id="menu-button" class="text-white focus:outline-none">
+          <button id="menu-button" class="text-{{ config_data.theme.Text }} focus:outline-none px-4">
             <i class="fas fa-bars"></i>
           </button>
         </div>
       </div>
-      <ul id="mobile-menu" class="md:hidden hidden flex-col space-y-2 mt-4">
+      <ul id="mobile-menu" class="md:hidden hidden flex-col space-y-2 mt-4 px-3 overflow-hidden max-h-0">
         <li>
-          <a href="#about" class="block text-center py-2 hover:underline"
-            >About</a
-          >
+          <a href="#about" class="block text-center py-2 hover:underline text-{{ config_data.theme.Text }}">About</a>
         </li>
         <li>
-          <a href="#projects" class="block text-center py-2 hover:underline"
-            >Projects</a
-          >
+          <a href="#projects" class="block text-center py-2 hover:underline text-{{ config_data.theme.Text }}">Projects</a>
         </li>
         <li>
-          <a href="#skills" class="block text-center py-2 hover:underline"
-            >Skills</a
-          >
+          <a href="#skills" class="block text-center py-2 hover:underline text-{{ config_data.theme.Text }}">Skills</a>
         </li>
         <li>
-          <a href="#education" class="block text-center py-2 hover:underline"
-            >Education</a
-          >
+          <a href="#education" class="block text-center py-2 hover:underline text-{{ config_data.theme.Text }}">Education</a>
         </li>
         <li>
-          <a href="#experience" class="block text-center py-2 hover:underline"
-            >Experience</a
-          >
+          <a href="#experience" class="block text-center py-2 hover:underline text-{{ config_data.theme.Text }}">Experience</a>
         </li>
         <li>
-          <a href="#contact" class="block text-center py-2 hover:underline"
-            >Contact</a
-          >
+          <a href="#contact" class="block text-center py-2 hover:underline text-{{ config_data.theme.Text }}">Contact</a>
         </li>
       </ul>
     </nav>
 
     <!-- home -->
-    <section id="about" class="py-16 bg-white">
+    <section id="about" class="py-16 bg-{{ config_data.theme.Background }}">
       <div class="container mx-auto flex flex-col md:flex-row items-center">
         <div class="w-full md:w-1/2">
-          <h2 class="text-4xl font-bold mb-4 font-spartan">
-            Hello, I'm [Your Name]
+          <h2 class="text-4xl font-bold mb-4 font-spartan px-3">
+            {{ config_data.home.main[0].text }}
           </h2>
-          <p class="text-lg text-gray-700">
-            I am a passionate web developer with a knack for building beautiful,
-            user-friendly websites and web applications.
+          <p class="text-lg text-{{ config_data.theme.Text }} px-3">
+            {{ config_data.home.sub[0].text }}
           </p>
         </div>
         <div class="w-full md:w-1/2 mt-6 md:mt-0 flex justify-center">
           <img
-            src="https://picsum.photos/200/300"
+            src="{{ config_data.home.profile[0].picture }}"
             alt="Your Photo"
             class="w-72 h-72 rounded-full shadow-lg custom-border"
           />
@@ -110,227 +147,127 @@
     </section>
 
     <!-- about me -->
-    <section id="about-me" class="py-8 bg-white" data-aos="fade-up">
-      <div class="container mx-auto">
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h2 class="text-3xl font-bold mb-4 text-center font-spartan">
-            About Me
-          </h2>
-          <p class="text-xl mb-4">Main text about yourself.</p>
-          <p class="text-gray-700">
-            Subtext with additional details about yourself.
-          </p>
+    <section id="about-me" class="py-8 bg-{{ config_data.theme.Background }}" data-aos="fade-up">
+      <div class="container mx-auto flex justify-center items-center">
+        <div class="bg-{{ config_data.theme.Secondary }} p-8 rounded-lg shadow-md text-center">
+          <h2 class="text-3xl font-bold mb-4 font-spartan">{{ config_data.about.main[0].text }}</h2>
+          <p class="text-xl mb-4">{{ config_data.about.sub[0].text }}</p>
+          <p class="text-{{ config_data.theme.Text }}">Subtext with additional details about yourself.</p>
         </div>
       </div>
     </section>
 
     <!-- skills -->
-    <section id="skills" class="py-8 bg-white" data-aos="fade-up">
-      <div class="container mx-auto">
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+    <section id="skills" class="py-12 bg-{{ config_data.theme.Background }}" data-aos="fade-up">
+      <div class="container mx-auto flex justify-center items-center">
+        <div class="bg-{{ config_data.theme.Secondary }} p-8 rounded-lg shadow-md text-center">
           <h2 class="text-3xl font-bold text-center mb-6 font-spartan">
             Skills
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div
-              class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
-            >
-              <i class="fab fa-html5 text-6xl text-orange-600 mb-4"></i>
-              <p class="text-xl font-semibold">HTML5</p>
-              <div
-                class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2"
-              >
-                <div
-                  class="bg-blue-600 h-2.5 rounded-full"
-                  style="width: 70%"
-                ></div>
-              </div>
-            </div>
-            <div
-              class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
-            >
-              <i class="fab fa-css3-alt text-6xl text-blue-600 mb-4"></i>
-              <p class="text-xl font-semibold">CSS3</p>
-              <div
-                class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2"
-              >
-                <div
-                  class="bg-blue-600 h-2.5 rounded-full"
-                  style="width: 80%"
-                ></div>
-              </div>
-            </div>
-            <div
-              class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
-            >
-              <i class="fab fa-js-square text-6xl text-yellow-500 mb-4"></i>
-              <p class="text-xl font-semibold">JavaScript</p>
-              <div
-                class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2"
-              >
-                <div
-                  class="bg-blue-600 h-2.5 rounded-full"
-                  style="width: 60%"
-                ></div>
-              </div>
-            </div>
-            <div
-              class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
-            >
-              <i class="fab fa-react text-6xl text-blue-500 mb-4"></i>
-              <p class="text-xl font-semibold">React</p>
-              <div
-                class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2"
-              >
-                <div
-                  class="bg-blue-600 h-2.5 rounded-full"
-                  style="width: 50%"
-                ></div>
-              </div>
-            </div>
-            <div
-              class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
-            >
-              <i class="fab fa-node text-6xl text-green-600 mb-4"></i>
-              <p class="text-xl font-semibold">Node.js</p>
-              <div
-                class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2"
-              >
-                <div
-                  class="bg-blue-600 h-2.5 rounded-full"
-                  style="width: 90%"
-                ></div>
-              </div>
-            </div>
-            <div
-              class="flex flex-col items-center bg-white p-4 rounded-lg shadow-md"
-            >
-              <i class="fab fa-python text-6xl text-blue-400 mb-4"></i>
-              <p class="text-xl font-semibold">Python</p>
-              <div
-                class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2"
-              >
-                <div
-                  class="bg-blue-600 h-2.5 rounded-full"
-                  style="width: 40%"
-                ></div>
-              </div>
-            </div>
+            {% for skill_group in config_data.skills.values() %}
+              {% for skill in skill_group %}
+                <div class="flex flex-col items-center bg-{{ config_data.theme.Background }} p-4 rounded-lg shadow-md">
+                  <i class="fab fa-html5 text-6xl text-{{ config_data.theme.Primary }} mb-4"></i>
+                  <p class="text-xl font-semibold">{{ skill.title }}</p>
+                  <div class="w-full bg-{{ config_data.theme.Secondary }} rounded-full h-2.5 mt-2">
+                    <div class="bg-{{ config_data.theme.Primary }} h-2.5 rounded-full" style="width: {{ skill.level }}%"></div>
+                  </div>
+                  <p class="text-sm mt-2">{{ skill.level }}%</p>
+                </div>
+              {% endfor %}
+            {% endfor %}
           </div>
         </div>
       </div>
     </section>
 
     <!-- projects -->
-    <section id="projects" class="py-8 bg-white" data-aos="fade-up">
-      <div class="container mx-auto">
-        <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+    <section id="projects" class="py-12 bg-{{ config_data.theme.Background }}" data-aos="fade-up">
+      <div class="container mx-auto flex justify-center items-center">
+        <div class="bg-{{ config_data.theme.Secondary }} p-8 rounded-lg shadow-md text-center">
           <h2 class="text-3xl font-bold text-center mb-4 font-spartan">
             Projects
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="bg-white p-4 rounded-lg shadow-md">
-              <h3 class="text-2xl font-semibold mb-3">Project 1</h3>
-              <p class="text-gray-700">Brief description of project 1.</p>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-              <h3 class="text-2xl font-semibold mb-3">Project 2</h3>
-              <p class="text-gray-700">Brief description of project 2.</p>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-              <h3 class="text-2xl font-semibold mb-3">Project 3</h3>
-              <p class="text-gray-700">Brief description of project 3.</p>
-            </div>
+            {% for project_group in config_data.projects.values() %}
+              {% for project in project_group %}
+                <div class="bg-{{ config_data.theme.Background }} p-4 rounded-lg shadow-md">
+                  <h3 class="text-2xl font-semibold mb-3">{{ project.title }}</h3>
+                  <p class="text-{{ config_data.theme.Text }}">{{ project.description }}</p>
+                  {% if project.link %}
+                    <a href="{{ project.link }}" class="text-{{ config_data.theme.Accent }} hover:underline">View Project</a>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            {% endfor %}
           </div>
         </div>
       </div>
     </section>
 
     <!-- education -->
-    <section id="education" class="py-8 bg-white" data-aos="fade-up">
-      <div class="container mx-auto">
-        <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+    <section id="education" class="py-12 bg-{{ config_data.theme.Background }}" data-aos="fade-up">
+      <div class="container mx-auto flex justify-center items-center">
+        <div class="bg-{{ config_data.theme.Secondary }} p-8 rounded-lg shadow-md text-center">
           <h2 class="text-3xl font-bold text-center mb-4 font-spartan">
             Education
           </h2>
-          <ul class="list-none space-y-4 text-gray-700">
-            <li>
-              <strong>Bachelor's Degree in Computer Engineering</strong> - [Your
-              University]
-            </li>
-            <li><strong>High School (+2)</strong> - [Your School]</li>
+          <ul class="list-none space-y-4 text-{{ config_data.theme.Text }}">
+            {% for edu_group in config_data.education.values() %}
+              {% for edu in edu_group %}
+                <li>
+                  <strong>{{ edu.title }}</strong> - {{ edu.date }}
+                  <p>{{ edu.description }}</p>
+                </li>
+              {% endfor %}
+            {% endfor %}
           </ul>
         </div>
       </div>
     </section>
 
     <!-- experience -->
-    <section id="experience" class="py-8 bg-white" data-aos="fade-up">
-      <div class="container mx-auto">
-        <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+    <section id="experience" class="py-12 bg-{{ config_data.theme.Background }}" data-aos="fade-up">
+      <div class="container mx-auto flex justify-center items-center">
+        <div class="bg-{{ config_data.theme.Secondary }} p-8 rounded-lg shadow-md text-center">
           <h2 class="text-3xl font-bold text-center mb-4 font-spartan">
             Experience
           </h2>
-          <ul class="list-none space-y-4 text-gray-700">
-            <li>
-              <strong>Software Engineer</strong> - [Company Name]
-              <p class="text-sm">Jan 2020 - Present</p>
-              <p class="text-sm">
-                Description of your role and responsibilities.
-              </p>
-            </li>
-            <li>
-              <strong>Junior Developer</strong> - [Company Name]
-              <p class="text-sm">Jan 2018 - Dec 2019</p>
-              <p class="text-sm">
-                Description of your role and responsibilities.
-              </p>
-            </li>
+          <ul class="list-none space-y-4 text-{{ config_data.theme.Text }}">
+            {% for exp_group in config_data.experience.values() %}
+              {% for exp in exp_group %}
+                <li>
+                  <strong>{{ exp.title }}</strong> - {{ exp.date }}
+                  <p class="text-sm">{{ exp.description }}</p>
+                </li>
+              {% endfor %}
+            {% endfor %}
           </ul>
         </div>
       </div>
     </section>
 
     <!-- footer -->
-    <footer id="contact" class="bg-gray-900 text-white py-8">
-      <div class="container mx-auto flex flex-col md:flex-row justify-between">
+    <footer id="contact" class="primary-bg text-{{ config_data.theme.Text }} py-8">
+      <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <!-- contact -->
         <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
           <h2 class="text-2xl font-bold mb-4 font-spartan">Contact</h2>
-          <p class="mb-2">Email: your.email@example.com</p>
-          <p class="mb-4">Phone: (123) 456-7890</p>
+          <p class="mb-2">Email: {{ config_data.contact.email }}</p>
+          <p class="mb-4">Phone: {{ config_data.contact.phone }}</p>
         </div>
         <!-- socials -->
-        <div class="md:w-1/2 text-center md:text-right">
+        <div class="md:w-1/2 text-center md:text-right p-4">
           <h2 class="text-2xl font-bold mb-4 font-spartan">Socials</h2>
-          <ul class="flex justify-center md:justify-end space-x-6">
+          <ul class="flex flex-wrap justify-center md:justify-end space-x-6">
+            {% for platform, url in config_data.socials.items() %}
             <li>
-              <a
-                href="https://github.com/yourgithub"
-                target="_blank"
-                class="hover:underline"
-              >
-                <i class="fab fa-github"></i> GitHub
+              <a href="{{ url }}" target="_blank" class="hover:underline">
+                <i class="fab fa-{{ platform }}"></i> {{ platform.capitalize() }}
               </a>
             </li>
-            <li>
-              <a
-                href="https://linkedin.com/in/yourlinkedin"
-                target="_blank"
-                class="hover:underline"
-              >
-                <i class="fab fa-linkedin"></i> LinkedIn
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://twitter.com/yourtwitter"
-                target="_blank"
-                class="hover:underline"
-              >
-                <i class="fab fa-twitter"></i> Twitter
-              </a>
-            </li>
+            {% endfor %}
           </ul>
         </div>
       </div>
@@ -345,7 +282,16 @@
       const mobileMenu = document.getElementById("mobile-menu");
 
       menuButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+        if (mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.remove("hidden", "slide-up");
+          mobileMenu.classList.add("slide-down");
+        } else {
+          mobileMenu.classList.remove("slide-down");
+          mobileMenu.classList.add("slide-up");
+          setTimeout(() => {
+            mobileMenu.classList.add("hidden");
+          }, 300); // Match the duration of the slide-up animation
+        }
       });
     </script>
   </body>

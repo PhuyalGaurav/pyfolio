@@ -10,6 +10,22 @@ def generate_random_color():
     return f"#{int(r*255):02x}{int(g*255):02x}{int(b*255):02x}"
 
 
+def generate_light_color():
+    h = random.random()
+    s = 0.1 + random.random() * 0.1
+    v = 0.9 + random.random() * 0.1
+    r, g, b = colorsys.hsv_to_rgb(h, s, v)
+    return f"#{int(r*255):02x}{int(g*255):02x}{int(b*255):02x}"
+
+
+def generate_dark_color():
+    h = random.random()
+    s = 0.7 + random.random() * 0.3
+    v = 0.1 + random.random() * 0.1
+    r, g, b = colorsys.hsv_to_rgb(h, s, v)
+    return f"#{int(r*255):02x}{int(g*255):02x}{int(b*255):02x}"
+
+
 def generate_random_theme():
     theme_type = random.choice(
         ["Monochromatic", "Analogous", "Complementary", "Split Complementary"]
@@ -39,10 +55,14 @@ def generate_random_theme():
     colors = [
         f"#{int(r*255):02x}{int(g*255):02x}{int(b*255):02x}" for r, g, b in colors
     ]
+
+    background_color = generate_light_color()
+    text_color = generate_dark_color()
+
     return {
-        "Text": colors[0],
-        "Background": colors[1],
-        "Primary": colors[2],
-        "Secondary": colors[3],
-        "Accent": colors[4],
+        "Text": text_color,
+        "Background": background_color,
+        "Primary": colors[1],
+        "Secondary": colors[2],
+        "Accent": colors[3],
     }

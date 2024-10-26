@@ -32,12 +32,19 @@ def parse_config_content(content):
 
 def build():
     config_folder = "config"
-    template_folder = "src/another"
+    template_folder = "src"
     output_folder = "output"
     template_file = "index.html"
 
     # Load the Jinja2 environment
     env = Environment(loader=FileSystemLoader(template_folder))
+
+    # Debug: Print the template folder path
+    print(f"Template folder path: {template_folder}")
+
+    # Debug: List files in the template folder
+    print(f"Files in template folder: {os.listdir(template_folder)}")
+
     template = env.get_template(template_file)
 
     # Read config files
@@ -53,7 +60,7 @@ def build():
 
     # Convert config data to JSON
     json_data = json.dumps(config_data, indent=4)
-
+    print(json_data)
     # Render the template with the config data
     output_content = template.render(config_data=config_data, json_data=json_data)
 
